@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAPHY CAR WASH 🚗🔥 | Clean Car in 30 Mins - Homabay</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f0f8ff;color:#111;padding-bottom:80px}
+header{background:linear-gradient(135deg,#007bff,#00d2ff);color:white;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+header b{font-size:18px}
+header button{background:white;color:#007bff;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{padding:20px 16px;text-align:center}
+.hero h1{font-size:32px;line-height:1.1}
+.hero h1 span{color:#007bff}
+.hero p{color:#888;font-size:13px;margin:8px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px}
+.service{background:white;border-radius:18px;padding:14px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.service:active{transform:scale(0.97)}
+.service span{font-size:38px;display:block}
+.service b{font-size:13px;display:block;margin:6px 0 2px}
+.service p{font-size:11px;color:#888}
+.service .price{color:#007bff;font-weight:bold;font-size:15px}
+.service button{background:#111;color:white;border:none;padding:7px 14px;border-radius:20px;font-weight:bold;margin-top:8px;cursor:pointer}
+.card{background:white;border-radius:18px;padding:16px;margin:0 16px 12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.card h3{margin-bottom:8px}
+.card p{font-size:13px;color:#666;line-height:1.6}
+input,select{width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin:6px 0;outline:none}
+.btn{width:100%;padding:13px;border:none;border-radius:12px;font-weight:bold;cursor:pointer}
+.bottom-nav{position:fixed;bottom:0;left:0;width:100%;background:white;border-top:1px solid #eee;padding:10px;display:flex;justify-content:space-around;font-size:11px;z-index:30}
+.bottom-nav div{text-align:center;cursor:pointer;color:#888}
+.bottom-nav div.active{color:#007bff;font-weight:bold}
+.bottom-nav div span{display:block;font-size:22px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99;justify-content:center;align-items:flex-end}
+.modalBox{background:white;width:100%;max-width:500px;border-radius:20px 20px 0 0;padding:20px;max-height:85vh;overflow-y:auto}
+.modalBox button{padding:11px 16px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin:5px}
+.queue{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #eee}
+.queue .num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;color:white}
+</style>
+</head>
+<body>
+
+<header><b>🚗 TAPHY CAR WASH</b><button onclick="openBooking('Full Wash')">Book Now →</button></header>
+
+<div class="hero">
+<h1>Clean Car<br><span>Happy You! 🚗✨</span></h1>
+<p>Best Car Wash Homabay! • 30 Mins Only • No Queue!<br>📍 Homabay Town, Near Lake • 🟢 Open Now - 5 Cars Waiting</p>
+</div>
+
+<div class="grid">
+<div class="service" onclick="openBooking('Boda Wash - Ksh 100')"><span>🛵</span><b>Boda Wash</b><p>15 mins • Boda</p><div class="price">Ksh 100</div><button>Book →</button></div>
+<div class="service" onclick="openBooking('Car Wash - Ksh 300')"><span>🚗</span><b>Car Wash</b><p>30 mins • Small Car</p><div class="price">Ksh 300</div><button>Book →</button></div>
+<div class="service" onclick="openBooking('Full Wash + Vacuum - Ksh 500')"><span>✨</span><b>Full Wash + Vacuum</b><p>45 mins • Inside + Outside</p><div class="price">Ksh 500</div><button>Book →</button></div>
+<div class="service" onclick="openBooking('SUV / Big Car - Ksh 600')"><span>🚙</span><b>SUV / Big Car</b><p>45 mins • Big Car</p><div class="price">Ksh 600</div><button>Book →</button></div>
+<div class="service" onclick="openBooking('Interior Detailing - Ksh 1,000')"><span>🧹</span><b>Interior Detailing</b><p>1 hr • Deep Clean</p><div class="price">Ksh 1,000</div><button>Book →</button></div>
+<div class="service" onclick="openBooking('Wax + Polish - Ksh 800')"><span>💎</span><b>Wax + Polish</b><p>1 hr • Shiny!</p><div class="price">Ksh 800</div><button>Book →</button></div>
+</div>
+
+<div class="card" style="background:linear-gradient(135deg,#007bff,#00d2ff);color:white;border:none">
+<h3>🎉 OFFER! - Wash 3 Times, 4th FREE!</h3>
+<p style="color:#fff">Osha gari mara 3, ya 4 ni FREE! Loyalty Card!</p>
+<button class="btn" style="background:white;color:#007bff;margin-top:10px" onclick="openBooking('Full Wash (Loyalty)')">Claim Offer →</button>
+</div>
+
+<div class="card">
+<h3>🚗 Live Queue - Watu 5 Wanasubiri</h3>
+<p style="font-size:12px;color:#888;margin-bottom:8px">Book sasa, usisubiri queue!</p>
+<div class="queue"><div class="num" style="background:#00a651">1</div><div style="flex:1"><b>Toyota Probox - KCG 123A</b><p style="font-size:11px;color:#888">Full Wash • Started 10:00</p></div><b style="color:#00a651">Washing...</b></div>
+<div class="queue"><div class="num" style="background:#ffcc00;color:#111">2</div><div style="flex:1"><b>Boda - KMFX 456</b><p style="font-size:11px;color:#888">Boda Wash • Waiting</p></div><b>Next</b></div>
+<div class="queue"><div class="num" style="background:#ccc">3</div><div style="flex:1"><b>Nissan Note - KDQ 789</b><p style="font-size:11px;color:#888">Car Wash • Waiting</p></div><b>3rd</b></div>
+</div>
+
+<div class="card">
+<h3>⭐ Reviews</h3>
+<p>🚗 <b>Pastor Jack</b> - "Gari yangu inang'ara kama mpya! 😍" - ⭐⭐⭐⭐⭐</p>
+<p>🛵 <b>Ryan</b> - "Boda yangu safi in 15 mins! Fast!" - ⭐⭐⭐⭐⭐</p>
+<p>🚙 <b>Favour</b> - "Best car wash Homabay, no queue!" - ⭐⭐⭐⭐⭐</p>
+</div>
+
+<div style="text-align:center;color:#888;font-size:12px;padding:10px">Taphy Car Wash • Homabay Town • 📞 0700 123 456<br>Open 7AM - 7PM Daily • Made by Taphy Samson 🇰🇪</div>
+
+<div class="bottom-nav">
+<div class="active"><span>🏠</span>Home</div>
+<div onclick="openBooking('Car Wash')"><span>🚗</span>Book</div>
+<div onclick="showToast('🚗 Queue: 5 cars waiting! Book sasa!')"><span>⏱️</span>Queue</div>
+<div onclick="showToast('📞 Call: 0700 123 456')"><span>📞</span>Call</div>
+<div onclick="showToast('📍 Homabay Town, Near Lake')"><span>📍</span>Location</div>
+</div>
+
+<div class="modal" id="modal"><div class="modalBox"><div id="modalContent"></div><button style="background:#333;color:white;width:100%" onclick="closeModal()">Close ✕</button></div></div>
+<div id="toast" style="position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:10px 18px;border-radius:20px;font-weight:bold;font-size:13px;z-index:100;display:none"></div>
+
+<script>
+function showToast(m){ let t=document.getElementById('toast'); t.innerText=m; t.style.display='block'; setTimeout(()=>t.style.display='none',2500); }
+function openBooking(service){
+  document.getElementById('modalContent').innerHTML='<h2>🚗 Book: '+service+'</h2><p style="color:#888;margin:8px 0">Jaza details:</p><input placeholder="Jina lako... e.g. Pastor Jack"><input placeholder="Phone..."><input placeholder="Number Plate... e.g. KCG 123A"><select><option>Leo - 11:00 AM</option><option>Leo - 12:00 PM</option><option>Leo - 2:00 PM</option><option>Kesho - 9:00 AM</option></select><button style="background:#007bff;color:white;width:100%;padding:13px" onclick="closeModal();showToast(\'🎉 Booking Confirmed! Karibu Taphy Car Wash!\')">Confirm Booking →</button><p style="font-size:11px;color:#888;text-align:center;margin-top:8px">Pay on arrival • No waiting if booked!</p>';
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+</script>
+</body>
+</html>
